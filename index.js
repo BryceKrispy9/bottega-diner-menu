@@ -1,3 +1,11 @@
+const startDiner = () => {
+    window.prompt(openMessage, mainMenu);
+
+    if 
+}
+
+let openMessage = prompt("Here are our menus, what would you like to order?");
+
 const mainMenu = [
     {
         product: 'Bacon Cheeseburger',
@@ -51,7 +59,7 @@ const sideMenu = [
 const waiterName = ["John", "Michael", "Jessie", "Ryan"];
 
 function displayMenus () {
-    return mainMenu + sideMenu;
+    console.log(mainMenu);
 }
 
-console.log(displayMenus());
+displayMenus();
