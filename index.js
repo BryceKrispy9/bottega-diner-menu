@@ -1,65 +1,72 @@
 const startDiner = () => {
-    window.prompt(openMessage, mainMenu);
+    alert()
+};
 
-    if 
+const mainMenu = {
+    'Bacon Cheeseburger' : 13.00,
+    'Animal Style Cheeseburger' : 15.00,
+    'Full Salad' : 9.50,
+    'Chicken Wings' : 11.00,
+    'Sirloin Steak' : 21.00
+};
+
+const sideMenu = {
+    'Onion Rings' : 5.00,
+    'French Fries' : 4.00,
+    'Side Salad' : 6.00,
+    'Sweet Potato Fries' : 5.00
+};
+
+const mainMenuChoices = menu => {
+    let dinnerMenu = []
+    Object.keys(menu).map(box => {
+        dinnerMenu.push(`${box}`)
+    })
+    return dinnerMenu.join()
 }
 
-let openMessage = prompt("Here are our menus, what would you like to order?");
-
-const mainMenu = [
-    {
-        product: 'Bacon Cheeseburger',
-        price: 13.00
-    },
-    {
-        product: 'Animal Style Cheeseburger',
-        price: 15.00
-    },
-    {
-        product: 'Full Salad',
-        price: 9.50
-    },
-    {
-        product: 'Chicken Wings',
-        price: 11.00
-    },
-    {
-        product: 'Sirloin Steak',
-        price: 21.00
-    },
-    {
-        product: 'Peperroni Pizza',
-        price: 18.50
-    },
-    {
-        product: 'Meatball Sandwich',
-        price: 14.00
-    }
-]
-
-const sideMenu = [
-    {
-        product: 'Onion Rings',
-        price: 5.00
-    },
-    {
-        product: 'French Fries',
-        price: 4.00
-    },
-    {
-        product: 'Side Salad',
-        price: 6.00
-    },
-    {
-        product: 'Sweet Potato Fries',
-        price: 5.00
-    }
-]
-
-const waiterName = ["John", "Michael", "Jessie", "Ryan"];
-
-function displayMenus () {
-    console.log(mainMenu);
+const sideMenuChoices = menu => {
+    let dinnerMenu = []
+    Object.keys(menu).map(box => {
+        dinnerMenu.push(`${box}`)
+    })
+    return dinnerMenu.join()
 }
 
-displayMenus();
+const waiterCommentsMain = {
+    'Bacon Cheeseburger' : 'is delicious with Onion Rings.',
+    'Animal Style Cheeseburger' : 'is not for your average lightweight!',
+    'Full Salad' : 'is a large bowl of vegetables from the finest bushes.',
+    'Chicken Wings' : '- These wings come with 4 different dipping sauces that you will love!',
+    'Sirloin Steak' : '- We normally serve this medium rare so that the taste is better preserved.'
+}
+
+const waiterCommentsSide = {
+    'Onion Rings' : '- made with our famous beer-battered breading!',
+    'French Fries' : 'are made from freshly cut potatoes that we receive everyday!',
+    'Side Salad' : 'is a smaller bowl of vegetables from the finest bushes.',
+    'Sweet Potato Fries' : '- A personal favorite! You will want two servings!'
+}
+
+
+
+alert('Welcome to the Bottega Diner!')
+
+const chooseMainItems = window.prompt(`Here is a list of our Main Menu and Side menu, what would you like to order?:   ${mainMenuChoices(mainMenu)}.`)   /* Here is our side menu:   ${menuChoices(sideMenu)}.   What would you like to order?`) */
+
+window.alert(`The ${chooseMainItems} ${waiterCommentsMain[chooseItems]}`)
+
+window.alert(`${chooseMainItems} will cost you $${mainMenu[chooseMainItems]}`)
+
+
+
+const chooseSideItems = window.prompt(`Here is a list of our Side Menu, what would you like to order?:   ${sideMenuChoices(sideMenu)}.`)
+
+window.alert(`The ${chooseSideItems} ${waiterCommentsSide[chooseSideItems]}`)
+
+window.alert(`${chooseSideItems} will cost you $${sideMenu[chooseSideItems]}`)
+
+
+const total = (mainMenu[chooseMainItems] + sideMenu[chooseSideItems])
+
+window.alert(`Your total of your ${chooseMainItems} and your ${chooseSideItems} is $${total}.`)
